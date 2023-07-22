@@ -1,7 +1,10 @@
 header{
-    background-color: navy;
     color:white;
     text-align: center;
     font-weight: bolder;
     font-size: larger;
+}
+
+.bg-navy{
+    background-color: navy;
 }
