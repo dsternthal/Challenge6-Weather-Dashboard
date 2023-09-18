@@ -37,10 +37,12 @@ var fivedayForecastEl=document.getElementById("fiveday-forecast")
         console.log(forecastData)
         //grab 12:00PM each day for 5 days
         var forecastArr=forecastData.list
-        fivedayForecastEl.textContent=""
         for (let i = 3, j=1; i < forecastArr.length; i=i+8, j++) {
             console.log(forecastArr[i])
-            var cardTitle=document.getElementById("card-title")
+            var cardTitle=document.getElementById("card-title"+j)
+            cardTitle.textContent=dayjs.unix(forecastArr[i].dt).format(" (MM/DD/YYYY)")
+            var temp = document.getElementById("temp"+j)
+            temp.textContent=forecastArr[i].main.temp
         }
     })
   }
