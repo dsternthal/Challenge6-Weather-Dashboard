@@ -25,6 +25,11 @@ var fivedayForecastEl=document.getElementById("fiveday-forecast")
     .then(function(currentData){
         console.log(currentData)
         titleEl.innerHTML=currentData.name + dayjs.unix(currentData.dt).format(" (MM/DD/YYYY)") + "<img src'https://openweathermap.org/img/wn/"+currentData.weather[0].icon+"@2x.png'>"
+        
+        tempEl.innerHTML="Temp: "+currentData.main.temp + " F"
+        windEl.innerHTML="Wind: "+currentData.wind.speed+" MPH"
+        humidityEl.innerHTML="Humidity: "+currentData.main.humidity+"%"
+
     })
 
     var forecastUrl="https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+apiKey+"&units=imperial"
