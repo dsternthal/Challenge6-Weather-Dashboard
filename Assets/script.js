@@ -47,7 +47,16 @@ var fivedayForecastEl=document.getElementById("fiveday-forecast")
             var cardTitle=document.getElementById("card-title"+j)
             cardTitle.textContent=dayjs.unix(forecastArr[i].dt).format(" (MM/DD/YYYY)")
             var temp = document.getElementById("temp"+j)
-            temp.textContent=forecastArr[i].main.temp
+            temp.textContent="Temp: "+forecastArr[i].main.temp
+
+            var wind = document.getElementById("wind"+j)
+            wind.textContent="Wind: "+forecastArr[i].wind.speed+" MPH"
+
+            var humidity = document.getElementById("humidity"+j)
+            humidity.textContent="Humidity: "+ forecastArr[i].main.humidity + "%"
+
+            var icon = document.getElementById("icon"+j)
+            icon.textContent="https://openweathermap.org/img/wn/10d@2x.png"
         }
     })
   }
