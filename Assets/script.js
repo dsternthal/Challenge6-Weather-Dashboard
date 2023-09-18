@@ -56,7 +56,7 @@ var fivedayForecastEl=document.getElementById("fiveday-forecast")
             humidity.textContent="Humidity: "+ forecastArr[i].main.humidity + "%"
 
             var icon = document.getElementById("icon"+j)
-            icon.textContent="https://openweathermap.org/img/wn/10d@2x.png"
+            icon.innerHTML='<src="`https://openweathermap.org/img/wn/${forcastArr[i].weather.icon}@2x.png`"'
         }
     })
   }
